@@ -13,15 +13,35 @@ const clearDisplay = () => {
   
 };
 const updateDisplay = (event) => {
-  console.log('currentCalc + event',currentCalc);
-  if (currentCalc === "0") {
-    setCalc(event);
-  } else if (currentCalc.match(/\./)) {
-      if (event !== ".") {
-        setCalc(currentCalc + event)
-      }
-  }else {setCalc(currentCalc + event)}
+if (
+  event.match(/\+|-|\*|\//) &&
+  currentCalc[currentCalc.length - 1].match(/\+|\*|\/|-/)
+) {
+  const choppedString = currentCalc.slice(0, currentCalc.length - 1);
+  setCalc(choppedString + event);
+} else if (currentCalc === "0" && event.match(/[0-9]/)) {
+  setCalc(event);
+} else if (
+  ((currentCalc || "").match(/\d\./g) || []).length >
+  ((currentCalc || "").match(/\+|-|\*|\//g) || []).length
+) {
+  if (event !== ".") {
+    setCalc(currentCalc + event);
+  }
+} else {
+  setCalc(currentCalc + event);
+}
 };
+
+const calculate = () => {
+  const result = eval(currentCalc)
+  document.getElementById('display').innerHTML = result;
+  console.log('result: ', result)
+  setCalc(String(result));
+  console.log("result type: ", typeof (String(result)));
+  console.log('currentCalc: ', currentCalc);
+  console.log('currentCalc type: ', typeof(currentCalc))
+}
 
   return (
     <>
@@ -78,7 +98,7 @@ const updateDisplay = (event) => {
         .
       </button>
 
-      <button id="equals">=</button>
+      <button id="equals" onClick={() => calculate()}>=</button>
 
       <div id="display">{currentCalc}</div>
     </>
