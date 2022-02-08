@@ -103,11 +103,11 @@ const Calculator = () => {
 
           
             <button
-
-              onClick={() => updateDisplay("9")}
-              id="nine"
+     
+              onClick={() => updateDisplay("7")}
+              id="seven"
             >
-              9
+              7
             </button>
             <button
      
@@ -116,14 +116,14 @@ const Calculator = () => {
             >
               8
             </button>
-
             <button
-     
-              onClick={() => updateDisplay("7")}
-              id="seven"
+
+              onClick={() => updateDisplay("9")}
+              id="nine"
             >
-              7
+              9
             </button>
+
 
             <button
               onClick={() => updateDisplay("+")}
@@ -134,10 +134,10 @@ const Calculator = () => {
        
             <button
      
-              onClick={() => updateDisplay("6")}
-              id="six"
+              onClick={() => updateDisplay("4")}
+              id="four"
             >
-              6
+              4
             </button>
 
             <button
@@ -147,14 +147,14 @@ const Calculator = () => {
             >
               5
             </button>
-
             <button
      
-              onClick={() => updateDisplay("4")}
-              id="four"
+              onClick={() => updateDisplay("6")}
+              id="six"
             >
-              4
+              6
             </button>
+
 
             <button
               onClick={() => updateDisplay("-")}
@@ -165,10 +165,10 @@ const Calculator = () => {
 
           <button
  
-            onClick={() => updateDisplay("3")}
-            id="three"
+            id="one"
+            onClick={() => updateDisplay("1")}
           >
-            3
+            1
           </button>
 
           <button
@@ -180,10 +180,10 @@ const Calculator = () => {
           </button>
           <button
  
-            id="one"
-            onClick={() => updateDisplay("1")}
+            onClick={() => updateDisplay("3")}
+            id="three"
           >
-            1
+            3
           </button>
 
           <button id="equals" onClick={() => calculate()}>
