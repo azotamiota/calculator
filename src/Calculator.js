@@ -71,35 +71,35 @@ const Calculator = () => {
         <button id="clear" onClick={clearDisplay}>
           AC
         </button>
-        <button onClick={() => updateDisplay("0")} id="zero">
+        <button className='num-button' onClick={() => updateDisplay("0")} id="zero">
           0
         </button>
-        <button id="one" onClick={() => updateDisplay("1")}>
+        <button className='num-button' id="one" onClick={() => updateDisplay("1")}>
           1
         </button>
-        <button id="two" onClick={() => updateDisplay("2")}>
+        <button className='num-button' id="two" onClick={() => updateDisplay("2")}>
           2
         </button>
-        <button onClick={() => updateDisplay("3")} id="three">
+        <button className='num-button' onClick={() => updateDisplay("3")} id="three">
           3
         </button>
-        <button onClick={() => updateDisplay("4")} id="four">
+        <button className='num-button' onClick={() => updateDisplay("4")} id="four">
           4
         </button>
-        <button onClick={() => updateDisplay("5")} id="five">
+        <button className='num-button' onClick={() => updateDisplay("5")} id="five">
           5
         </button>
-        <button onClick={() => updateDisplay("6")} id="six">
+        <button className='num-button' onClick={() => updateDisplay("6")} id="six">
           {" "}
           6
         </button>
-        <button onClick={() => updateDisplay("7")} id="seven">
+        <button className='num-button' onClick={() => updateDisplay("7")} id="seven">
           7
         </button>
-        <button onClick={() => updateDisplay("8")} id="eight">
+        <button className='num-button' onClick={() => updateDisplay("8")} id="eight">
           8
         </button>
-        <button onClick={() => updateDisplay("9")} id="nine">
+        <button className='num-button' onClick={() => updateDisplay("9")} id="nine">
           9
         </button>
 
