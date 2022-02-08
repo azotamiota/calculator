@@ -1,3 +1,36 @@
+body {
+    background-color: pink;
+}
+#container {
+border: 1px solid black;
+
+}
+#display {
+  border: 1px solid black;
+  height: 30px;
+}
+#result-display {
+border: 1px solid black;
+height: 30px;
+}
+#buttons-container {
+  border: 1px solid black;
+  display: grid;
+grid-template-columns: auto auto auto auto;
+grid-template-areas: auto auto auto auto auto;
+    
+}
 .num-button {
     background-color: blue;
+}
+#clear {
+    grid-column: 1 / span 2;
+}
+#zero {
+    grid-column: 1 /span 2;
+}
+#equals {
+    grid-column-start: 4;
+    grid-row-start: 4;
+    grid-row-end: 6;
 }

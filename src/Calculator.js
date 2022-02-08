@@ -67,65 +67,141 @@ const Calculator = () => {
   };
   return (
     <>
-      <div id="container">
-        <button id="clear" onClick={clearDisplay}>
-          AC
-        </button>
-        <button className='num-button' onClick={() => updateDisplay("0")} id="zero">
-          0
-        </button>
-        <button className='num-button' id="one" onClick={() => updateDisplay("1")}>
-          1
-        </button>
-        <button className='num-button' id="two" onClick={() => updateDisplay("2")}>
-          2
-        </button>
-        <button className='num-button' onClick={() => updateDisplay("3")} id="three">
-          3
-        </button>
-        <button className='num-button' onClick={() => updateDisplay("4")} id="four">
-          4
-        </button>
-        <button className='num-button' onClick={() => updateDisplay("5")} id="five">
-          5
-        </button>
-        <button className='num-button' onClick={() => updateDisplay("6")} id="six">
-          {" "}
-          6
-        </button>
-        <button className='num-button' onClick={() => updateDisplay("7")} id="seven">
-          7
-        </button>
-        <button className='num-button' onClick={() => updateDisplay("8")} id="eight">
-          8
-        </button>
-        <button className='num-button' onClick={() => updateDisplay("9")} id="nine">
-          9
-        </button>
+      <div id="container" className="rounded-3 mt-3 ms-3 me-3">
+        <div
+          id="display"
+          className="d-flex align-items-center justify-content-end p-1 m-1 rounded-2"
+        >
+          {currentCalc}
+        </div>
+        <div
+          id="result-display"
+          className="d-flex align-items-center justify-content-end p-1 m-1 rounded-2"
+        ></div>
+        <section
+          id="buttons-container"
+          className="p-1 m-1 rounded-2"
+        >
+          
+            <button id="clear" onClick={clearDisplay}>
+              AC
+            </button>
+            <button
+              onClick={() => updateDisplay("/")}
+              id="divide"
+                          >
+              /
+            </button>
 
-        <button onClick={() => updateDisplay("+")} id="add">
-          +
-        </button>
-        <button onClick={() => updateDisplay("-")} id="subtract">
-          -
-        </button>
-        <button onClick={() => updateDisplay("*")} id="multiply">
-          *
-        </button>
-        <button onClick={() => updateDisplay("/")} id="divide">
-          /
-        </button>
+            <button
+              onClick={() => updateDisplay("*")}
+              id="multiply"
+                          >
+              *
+            </button>
+         
 
-        <button onClick={() => updateDisplay(".")} id="decimal">
-          .
-        </button>
+          
+            <button
 
-        <button id="equals" onClick={() => calculate()}>
-          =
-        </button>
+              onClick={() => updateDisplay("9")}
+              id="nine"
+            >
+              9
+            </button>
+            <button
+     
+              onClick={() => updateDisplay("8")}
+              id="eight"
+            >
+              8
+            </button>
 
-        <div id="display">{currentCalc}</div>
-        <div id="result-display"></div>
+            <button
+     
+              onClick={() => updateDisplay("7")}
+              id="seven"
+            >
+              7
+            </button>
+
+            <button
+              onClick={() => updateDisplay("+")}
+              id="add"
+                          >
+              +
+            </button>
+       
+            <button
+     
+              onClick={() => updateDisplay("6")}
+              id="six"
+            >
+              6
+            </button>
+
+            <button
+     
+              onClick={() => updateDisplay("5")}
+              id="five"
+            >
+              5
+            </button>
+
+            <button
+     
+              onClick={() => updateDisplay("4")}
+              id="four"
+            >
+              4
+            </button>
+
+            <button
+              onClick={() => updateDisplay("-")}
+              id="subtract"
+              >
+              -
+            </button>
+
+          <button
+ 
+            onClick={() => updateDisplay("3")}
+            id="three"
+          >
+            3
+          </button>
+
+          <button
+ 
+            id="two"
+            onClick={() => updateDisplay("2")}
+          >
+            2
+          </button>
+          <button
+ 
+            id="one"
+            onClick={() => updateDisplay("1")}
+          >
+            1
+          </button>
+
+          <button id="equals" onClick={() => calculate()}>
+            =
+          </button>
+
+          <button
+            onClick={() => updateDisplay("0")}
+            id="zero"
+          >
+            0
+          </button>
+
+          <button onClick={() => updateDisplay(".")} id="decimal">
+            .
+          </button>
+
+        </section>
       </div>
     </>
   );
