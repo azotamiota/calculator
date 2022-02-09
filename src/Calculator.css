@@ -10,6 +10,8 @@ body {
     font-family: 'Toke Lover Free Version';
 }
 #container {
+    max-width: 425px;
+    max-height: 667px;
 background-color: #9896f1; 
 border: 30px solid;
 
