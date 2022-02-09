@@ -130,7 +130,11 @@ const Calculator = () => {
             3
           </div>
 
-          <div id="equals" onClick={() => calculate()} className="btn d-flex justify-content-center align-items-center">
+          <div
+            id="equals"
+            onClick={() => calculate()}
+            className="btn d-flex justify-content-center align-items-center"
+          >
             =
           </div>
 
@@ -143,6 +147,11 @@ const Calculator = () => {
           </div>
         </section>
       </div>
+        <footer id="copyright">
+          Designed and Coded By
+          <br />
+          <a href="https://azotamiota.github.io">azotamiota</a>
+        </footer>
     </>
   );
 };
