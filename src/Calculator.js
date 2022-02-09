@@ -70,137 +70,77 @@ const Calculator = () => {
       <div id="container" className="rounded-3 mt-3 ms-3 me-3">
         <div
           id="display"
-          className="d-flex align-items-center justify-content-end p-1 m-1 rounded-2"
+          className="d-flex align-items-center justify-content-end p-1 m-1 rounded-2 overflow-hidden"
         >
           {currentCalc}
         </div>
         <div
           id="result-display"
-          className="d-flex align-items-center justify-content-end p-1 m-1 rounded-2"
+          className="d-flex align-items-center justify-content-end p-1 m-1 rounded-2 overflow-hidden"
         ></div>
-        <section
-          id="buttons-container"
-          className="p-1 m-1 rounded-2"
-        >
-          
-            <button id="clear" onClick={clearDisplay}>
-              AC
-            </button>
-            <button
-              onClick={() => updateDisplay("/")}
-              id="divide"
-                          >
-              /
-            </button>
+        <section id="buttons-container" className="p-1 m-1 rounded-2">
+          <div id="clear" onClick={clearDisplay} className="btn">
+            AC
+          </div>
+          <div onClick={() => updateDisplay("/")} id="divide" className="btn">
+            /
+          </div>
 
-            <button
-              onClick={() => updateDisplay("*")}
-              id="multiply"
-                          >
-              *
-            </button>
-         
+          <div onClick={() => updateDisplay("*")} id="multiply" className="btn">
+            x
+          </div>
 
-          
-            <button
-     
-              onClick={() => updateDisplay("7")}
-              id="seven"
-            >
-              7
-            </button>
-            <button
-     
-              onClick={() => updateDisplay("8")}
-              id="eight"
-            >
-              8
-            </button>
-            <button
+          <div onClick={() => updateDisplay("7")} id="seven" className="btn">
+            7
+          </div>
+          <div onClick={() => updateDisplay("8")} id="eight" className="btn">
+            8
+          </div>
+          <div onClick={() => updateDisplay("9")} id="nine" className="btn">
+            9
+          </div>
 
-              onClick={() => updateDisplay("9")}
-              id="nine"
-            >
-              9
-            </button>
+          <div onClick={() => updateDisplay("+")} id="add" className="btn">
+            +
+          </div>
 
+          <div onClick={() => updateDisplay("4")} id="four" className="btn">
+            4
+          </div>
 
-            <button
-              onClick={() => updateDisplay("+")}
-              id="add"
-                          >
-              +
-            </button>
-       
-            <button
-     
-              onClick={() => updateDisplay("4")}
-              id="four"
-            >
-              4
-            </button>
+          <div onClick={() => updateDisplay("5")} id="five" className="btn">
+            5
+          </div>
+          <div onClick={() => updateDisplay("6")} id="six" className="btn">
+            6
+          </div>
 
-            <button
-     
-              onClick={() => updateDisplay("5")}
-              id="five"
-            >
-              5
-            </button>
-            <button
-     
-              onClick={() => updateDisplay("6")}
-              id="six"
-            >
-              6
-            </button>
+          <div onClick={() => updateDisplay("-")} id="subtract" className="btn">
+            -
+          </div>
 
-
-            <button
-              onClick={() => updateDisplay("-")}
-              id="subtract"
-              >
-              -
-            </button>
-
-          <button
- 
-            id="one"
-            onClick={() => updateDisplay("1")}
-          >
+          <div id="one" onClick={() => updateDisplay("1")} className="btn">
             1
-          </button>
+          </div>
 
-          <button
- 
-            id="two"
-            onClick={() => updateDisplay("2")}
-          >
+          <div id="two" onClick={() => updateDisplay("2")} className="btn">
             2
-          </button>
-          <button
- 
-            onClick={() => updateDisplay("3")}
-            id="three"
-          >
+          </div>
+          <div onClick={() => updateDisplay("3")} id="three" className="btn">
             3
-          </button>
+          </div>
 
-          <button id="equals" onClick={() => calculate()}>
+          <div id="equals" onClick={() => calculate()} className="btn d-flex justify-content-center align-items-center">
             =
-          </button>
+          </div>
 
-          <button
-            onClick={() => updateDisplay("0")}
-            id="zero"
-          >
+          <div onClick={() => updateDisplay("0")} id="zero" className="btn">
             0
-          </button>
+          </div>
 
-          <button onClick={() => updateDisplay(".")} id="decimal">
+          <div onClick={() => updateDisplay(".")} id="decimal" className="btn">
             .
-          </button>
-
+          </div>
         </section>
       </div>
     </>
