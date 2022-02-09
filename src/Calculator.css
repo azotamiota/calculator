@@ -63,6 +63,6 @@ grid-template-areas: auto auto auto auto auto;
 footer {
   font-family: monospace;
   margin: 15px;
-  font-size: 0.5em;
+  font-size: 0.7rem;
   text-align: center;
 }
