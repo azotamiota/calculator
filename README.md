@@ -1,6 +1,8 @@
 # Calculator
 
-## girly style calculator
+- simple calculator
 
-### created by React.js
+- girly style with vivid colors and hearts
+
+- created by React.js
 
