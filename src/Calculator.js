@@ -2,9 +2,12 @@ import React, { useState } from "react";
 
 
 const Calculator = () => {
+  
   const [currentCalc, setCalc] = useState("0");
-
+  const [isThisResult, setIsThisResult] = useState(false)
+ 
   const calculation = (event) => {
+    if (currentCalc.length < 15) {
     if (
       event.match(/[+*/]/) &&
       currentCalc.slice(-1).match(/[+*/-]/) &&
@@ -19,7 +22,7 @@ const Calculator = () => {
     ) {
       const choppedString = currentCalc.slice(0, currentCalc.length - 2);
       setCalc(choppedString + event);
-    } else if (currentCalc === "0" && event.match(/[0-9]/)) {
+    } else if (currentCalc === "0" && event.match(/[0-9.]/)) {
       setCalc(event);
     } else if (
       ((currentCalc || "").match(/\d\./g) || []).length >
@@ -37,47 +40,43 @@ const Calculator = () => {
     } else {
       setCalc(currentCalc + event);
     }
+  }
   };
 
   const clearDisplay = () => {
     setCalc("0");
-    document.getElementById("result-display").innerHTML = "";
+    setIsThisResult(false);
   };
+
   const updateDisplay = (event) => {
-    if (document.getElementById("result-display").innerHTML === "") {
+    if (!isThisResult) {
       calculation(event);
     } else {
-      if (event.match(/[0-9]/)) {
-        document.getElementById("result-display").innerHTML = "";
-        setCalc(event);
+      if (event.match(/[+*/-]/)) {
+        setCalc(currentCalc + event);
+        setIsThisResult(false);
+
       } else {
-        setCalc(document.getElementById("result-display").innerHTML);
-
-        document.getElementById("result-display").innerHTML = "";
-
-        calculation(event);
+        setCalc(event);
+        setIsThisResult(false)       
       }
     }
   };
 
   const calculate = () => {
     const result = eval(currentCalc);
-    document.getElementById("result-display").innerHTML = result;
     setCalc(String(result));
+    setIsThisResult(true);
   };
   return (
     <>
       <div id="container" className="rounded-3 mt-3 ms-auto me-auto">
         <div
           id="display"
-          className="d-flex align-items-center justify-content-end p-1 m-1 rounded-2 overflow-hidden"
+          className="d-flex align-items-center justify-content-end m-2 ps-1 pe-1 rounded-2 text-break"
         >
           {currentCalc}
         </div>
-        <div
-          id="result-display"
-          className="d-flex align-items-center justify-content-end p-1 m-1 rounded-2 overflow-hidden"
-        ></div>
         <section id="buttons-container" className="p-1 m-1 rounded-2">
           <div id="clear" onClick={clearDisplay} className="btn">
             AC
@@ -147,11 +146,11 @@ const Calculator = () => {
           </div>
         </section>
       </div>
-        <footer id="copyright">
-          Designed and Coded By
-          <br />
-          <a href="https://azotamiota.github.io">azotamiota</a>
-        </footer>
+      <footer id="copyright">
+        Designed and Coded By
+        <br />
+        <a href="https://azotamiota.github.io">azotamiota</a>
+      </footer>
     </>
   );
 };
