@@ -7,7 +7,7 @@ const Calculator = () => {
   const [isThisResult, setIsThisResult] = useState(false)
  
   const calculation = (event) => {
-    if (currentCalc.length < 15) {
+    if (currentCalc.length < 17) {
     if (
       event.match(/[+*/]/) &&
       currentCalc.slice(-1).match(/[+*/-]/) &&
@@ -40,6 +40,10 @@ const Calculator = () => {
     } else {
       setCalc(currentCalc + event);
     }
+  } else {
+    console.log('now its over 15 digits');
+    setCalc('too long number');
+    // setTimeout(setCalc('0'), 1000)
   }
   };
 
