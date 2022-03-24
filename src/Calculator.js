@@ -7,7 +7,7 @@ const Calculator = () => {
   const [isThisResult, setIsThisResult] = useState(false)
  
   const calculation = (event) => {
-    if (currentCalc.length < 17) {
+    if (currentCalc.length < 15) {
     if (
       event.match(/[+*/]/) &&
       currentCalc.slice(-1).match(/[+*/-]/) &&
